@@ -32,9 +32,9 @@ function getFlightDistance(fromCode, toCode) {
 function generateSimulatedPrice(fromCode, toCode) {
   const distance = getFlightDistance(fromCode, toCode);
   
-  const base_price = 1500;
-  const distance_factor = 2.5; 
-  const random_surge = Math.floor(Math.random() * 1500); 
+  const base_price = 2500;
+  const distance_factor = 3.5; 
+  const random_surge = Math.floor(Math.random() * 2000); 
   
   const price = base_price + (distance * distance_factor) + random_surge;
   return Math.round(price);

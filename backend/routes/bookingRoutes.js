@@ -7,15 +7,20 @@ const router = express.Router();
 
 router.post('/', protect, async (req, res, next) => {
   try {
-    const { flightId, passengerName, passengerAge } = req.body;
+    const { flightId, flightData, passengerName, passengerAge, seat, food, travelClass, specialFare } = req.body;
 
-    if (!flightId || !passengerName || !passengerAge) {
+    if ((!flightId && !flightData) || !passengerName || !passengerAge) {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
-    const flight = await Flight.findById(flightId);
-    if (!flight) {
-      return res.status(404).json({ message: 'Flight not found' });
+    let flight;
+    if (flightId) {
+      flight = await Flight.findById(flightId);
+      if (!flight) {
+        return res.status(404).json({ message: 'Flight not found' });
+      }
+    } else if (flightData) {
+      flight = await Flight.create(flightData);
     }
 
     if (flight.seatsLeft <= 0) {
@@ -24,13 +29,28 @@ router.post('/', protect, async (req, res, next) => {
 
     const pnr = `FLYEZ-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
 
+    let multiplier = 1;
+    if (travelClass === 'Business Class') multiplier = 2.5;
+    if (travelClass === 'First Class') multiplier = 4.0;
+
+    let discount = 1;
+    if (specialFare === 'Student') discount = 0.85;
+    if (specialFare === 'Armed Forces') discount = 0.80;
+    if (specialFare === 'Senior Citizen') discount = 0.90;
+
+    const computedPrice = Math.round(flight.price * multiplier * discount);
+
     const booking = await Booking.create({
       userId: req.user.id,
-      flightId,
+      flightId: flight._id,
       passengerName,
       passengerAge,
+      seat: seat || 'Unassigned',
+      food: food || 'None',
+      travelClass: travelClass || 'Economy',
+      specialFare: specialFare || 'Regular',
       pnr,
-      totalPrice: flight.price
+      totalPrice: computedPrice
     });
 
     flight.seatsLeft -= 1;
