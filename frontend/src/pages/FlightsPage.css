@@ -1,0 +1,79 @@
+.flights-page {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px 40px;
+}
+
+.flights-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.flights-title h2 {
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: #0f1d35;
+}
+
+.flights-count {
+  color: #6d7584;
+  font-size: 14px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid #d7deea;
+  color: #1a1a2e;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.back-btn:hover {
+  border-color: #1a73e8;
+  color: #1a73e8;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-controls label {
+  font-size: 14px;
+  color: #576072;
+}
+
+.sort-controls button {
+  border: 1px solid #d7deea;
+  background: white;
+  color: #2f3850;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.sort-controls button.active {
+  border-color: #1a73e8;
+  color: white;
+  background: #1a73e8;
+}
+
+.flights-empty-state {
+  max-width: 700px;
+  margin: 80px auto;
+  text-align: center;
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+
+@media (max-width: 900px) {
+  .flights-header {
+    flex-direction: column;
+  }
+}
