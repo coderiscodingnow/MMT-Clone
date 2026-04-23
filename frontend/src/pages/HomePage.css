@@ -161,8 +161,33 @@
 }
 
 .feature-icon {
-  font-size: 32px;
-  margin-bottom: 12px;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-icon.price {
+  background: #e6f4ea;
+  color: #1e8e3e;
+}
+
+.feature-icon.speed {
+  background: #fce8e6;
+  color: #d93025;
+}
+
+.feature-icon.secure {
+  background: #e8f0fe;
+  color: #1a73e8;
 }
 
 .feature-card h3 {

@@ -22,6 +22,9 @@ export default function Navbar() {
           {isAuthenticated ? (
             <>
               <span className="navbar-greeting">Hi, {user?.name}</span>
+              <Link to="/my-bookings" className="btn-nav btn-my-bookings">
+                My Bookings
+              </Link>
               <button type="button" className="btn-logout" onClick={handleLogout}>
                 Logout
               </button>

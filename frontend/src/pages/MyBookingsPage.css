@@ -1,0 +1,252 @@
+.my-bookings-page {
+  min-height: calc(100vh - 60px);
+  padding: 40px 24px;
+  background-color: #f4f6f8;
+}
+
+.my-bookings-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.my-bookings-header {
+  margin-bottom: 32px;
+}
+
+.my-bookings-header h1 {
+  font-size: 28px;
+  color: #0f1d35;
+  margin-bottom: 8px;
+}
+
+.my-bookings-header p {
+  color: #666;
+  font-size: 15px;
+}
+
+.bookings-loading {
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.no-bookings {
+  background: white;
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.no-bookings-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.no-bookings h2 {
+  font-size: 20px;
+  color: #0f1d35;
+  margin-bottom: 8px;
+}
+
+.no-bookings p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.book-now-btn {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.book-now-btn:hover {
+  background: #1558b0;
+}
+
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8ecf0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.booking-card-header {
+  background: #f8fafe;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.booking-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: #2e7d32;
+  border-radius: 50%;
+}
+
+.booking-pnr {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f1d35;
+  background: rgba(26, 115, 232, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.booking-flight-info {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed #e8ecf0;
+}
+
+.flight-route {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.flight-route .city h3 {
+  font-size: 24px;
+  color: #0f1d35;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.flight-route .city p {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flight-arrow {
+  text-align: center;
+  color: #1a73e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.flight-arrow span {
+  font-size: 20px;
+}
+
+.airline-name {
+  font-size: 11px;
+  color: #666;
+  font-weight: 600;
+}
+
+.flight-datetime {
+  text-align: right;
+  font-size: 13px;
+  color: #334;
+}
+
+.flight-datetime p {
+  margin-bottom: 6px;
+}
+
+.flight-datetime strong {
+  color: #888;
+  font-weight: 600;
+  display: inline-block;
+  width: 45px;
+}
+
+.booking-passengers {
+  padding: 16px 24px;
+  border-bottom: 1px solid #e8ecf0;
+}
+
+.booking-passengers h4 {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.passenger-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pax-tag {
+  background: #f4f6f8;
+  border: 1px solid #dde0e7;
+  color: #334;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.booking-card-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafbfc;
+}
+
+.booking-date-booked {
+  font-size: 12px;
+  color: #888;
+}
+
+.booking-total-price {
+  font-size: 14px;
+  color: #334;
+  font-weight: 600;
+}
+
+.booking-total-price span {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f1d35;
+  margin-left: 8px;
+}
+
+@media (max-width: 600px) {
+  .booking-flight-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .flight-datetime {
+    text-align: left;
+  }
+}
